@@ -22,8 +22,8 @@ Endpoint        Verb	Description
  */
 router.post('/jar', (req, res) => {
     const logFromRequest = {
-        userName: "store userName here",
-        category: "store category here",
+        userName: req.body.userName,
+        category: req.body.category,
         deleteBox: req.body.deleteBox,
         eventImage: req.body.eventImage,
         title: req.body.title,

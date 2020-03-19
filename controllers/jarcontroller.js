@@ -21,10 +21,13 @@ Endpoint        Verb	Description
  * Post an event to the user's jar
  */
 router.post('/jar', (req, res) => {
+    console.log("************************You're in jarcontroller  router.post  /jar route **********")
+
     const logFromRequest = {
         userName: req.body.userName,
         category: req.body.category,
         deleteBox: req.body.deleteBox,
+        eventURL: req.body.eventURL,
         eventImage: req.body.eventImage,
         title: req.body.title,
         date: req.body.date,
@@ -51,6 +54,7 @@ router.post('/jar', (req, res) => {
  * ****!!!!  Need to put in logic to get only for the current user !!!*****
  */
 router.get('/jar', (req, res) =>{
+    console.log("************************You're in jarcontroller  router.get  /jar route **********")
     Jar.findAll()
         .then(log => {
             res.status(200).json(log)
@@ -65,6 +69,7 @@ router.get('/jar', (req, res) =>{
  * Get a single requested event from the jar
  */
 router.get('/jar/:id', (req, res) => { // can put the search string at the end of the URL
+    console.log("************************You're in jarcontroller  router.get  /jar/:id route **********")
     Jar.findOne({ // find first instance of ...
             where: {
                 id: req.params.id

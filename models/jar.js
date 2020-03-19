@@ -12,6 +12,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.BOOLEAN,
             allowNull: false
         }, 
+        eventURL: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         eventImage: {
             type: DataTypes.STRING,
             allowNull: false
@@ -49,7 +53,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         }, 
         zip: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false
         } 
 

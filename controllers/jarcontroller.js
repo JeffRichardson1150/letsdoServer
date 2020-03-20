@@ -86,13 +86,20 @@ changing
 If specify the id of a log, update that log using the contents of body
 ********************************************* */
 router.put('/jar/:id', (req, res) => { 
+    console.log("At the router.put, req.params =", req.params)
+    console.log("You're ready to Jar.update for id", req.params.id)
+    console.log("req.body = ",req.body)
     Jar.update(req.body, {
             where: {
                 id: req.params.id
             }
         })
-        .then(log => res.status(200).json(log))
-        .catch(err => res.json(req.errors))
+        .then(log => console.log(`SUCCESS *** ${res.status(200).json(log)}`))
+        .catch(err => console.log(`FAILURE...BOO ${res.status(500).json({
+            error: err
+        })}`))
+
+        // .catch(err => console.log(`FAILURE...BOOOO ${res.json(req.errors)}`))
 })
 
 /********************************************** 

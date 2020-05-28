@@ -22,27 +22,27 @@ Endpoint        Verb	Description
  */
 router.post('/jar', (req, res) => {
     console.log("************************You're in jarcontroller  router.post  /jar route **********")
+    console.log("req.body: ", req.body)
+    console.log("req.body.eventURL: ", req.body.eventURL)
+    const logFromRequest = req.body;
+    // const logFromRequest = {
+    //     userName: req.body.userName,
+    //     category: req.body.category,
+    //     eventURL: req.body.eventURL,
+    //     eventImageURL: req.body.eventImage,
+    //     eventTitle: req.body.title,
+    //     eventDateTime: req.body.date,
+    //     venueName: req.body.venueName,
+    //     venueAddress: req.body.address,
+    //     venueCity: req.body.city,
+    //     venueState: req.body.state,
+    //     venueZip: req.body.zip
+    // }
 
-    const logFromRequest = {
-        userName: req.body.userName,
-        category: req.body.category,
-        deleteBox: req.body.deleteBox,
-        eventURL: req.body.eventURL,
-        eventImage: req.body.eventImage,
-        title: req.body.title,
-        date: req.body.date,
-        day: req.body.day,
-        time: req.body.time,
-        venueName: req.body.venueName,
-        address: req.body.address,
-        city: req.body.city,
-        state: req.body.state,
-        zip: req.body.zip
-    }
-
-    console.log(`********************* This is req from jarcontroller ${req}  ***********************`);
-
+    // console.log(`********************* This is req from jarcontroller ${req}  ***********************`);
+    console.log("logFromRequest: ", logFromRequest)
     Jar.create(logFromRequest)
+    // Jar.create(req)
         .then(log => res.status(200).json(log))
         .catch(err => res.json({
             error: err

@@ -8,51 +8,51 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         }, 
-        deleteBox: {
-            type: DataTypes.BOOLEAN,
+        eventID: {
+            type: DataTypes.STRING,
             allowNull: false
-        }, 
+        },
         eventURL: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        eventImage: {
-            type: DataTypes.STRING,
-            allowNull: false
-        }, 
-        title: {
+        eventImageURL: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        date: {
+        eventTitle: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        eventDateTime: {
             type: DataTypes.STRING,
             allowNull: false
         }, 
-        day: {
-            type: DataTypes.STRING,
-            allowNull: false
-        }, 
-        time: {
-            type: DataTypes.STRING,
-            allowNull: false
-        }, 
+        // eventDay: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false
+        // }, 
+        // eventTime: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false
+        // }, 
         venueName: {
             type: DataTypes.STRING,
             allowNull: false
         }, 
-        address: {
+        venueAddress: {
             type: DataTypes.STRING,
             allowNull: false
         }, 
-        city: {
+        venueCity: {
             type: DataTypes.STRING,
             allowNull: false
         }, 
-        state: {
+        venueState: {
             type: DataTypes.STRING,
             allowNull: false
         }, 
-        zip: {
+        venueZip: {
             type: DataTypes.STRING,
             allowNull: false
         } 

@@ -10,6 +10,8 @@ const validateSession = (req, res, next) => {
     } else {
         const token = req.headers.authorization;
         console.log("***************** getting ready to jwt.verify(token,... **************")
+        console.log("token: ", token)
+        console.log("process.env.JWT_SECRET: ", process.env.JWT_SECRET)
         jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
             if (!err && decoded) {
                 User.findOne({
